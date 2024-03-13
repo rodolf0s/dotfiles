@@ -1,0 +1,159 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+right_format = """$all"""
+
+# # Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+
+# # Use custom format
+# format = """
+# $character\
+# $os$hostname\
+# $directory\
+# $git_branch\
+# $git_status \
+# $python\
+# $aws\
+# $golang\
+# $java\
+# $nodejs\
+# $rust\
+# $ruby\
+# $scala\
+# $dart\
+# $conda\
+# $pijul_channel\
+# $lua\
+# $rlang\
+# $package\
+# $buf\
+# $memory_usage\
+# $docker_context\
+# [](#1C3A5E)$time[ ](#1C3A5E)$cmd_duration
+# [└─>](bold green) """
+
+# [time]
+# disabled = false
+# time_format = "%r" # Hour:Minute Format
+# style = "bg:#1d2230"
+# format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)'
+
+# # Shows current directory
+# [directory]
+# truncation_length = 3
+# fish_style_pwd_dir_length=2
+# home_symbol = '󰋜 ~'
+# read_only_style = '197'
+# read_only = '  '
+# format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+# [cmd_duration]
+# min_time = 10
+# format = 'took: [$duration](bold yellow)'
+
+### from users
+format = """\
+[](bg:#030B16 fg:#7DF9AA)\
+[󰀵 ](bg:#7DF9AA fg:#090c0c)\
+[](fg:#7DF9AA bg:#1C3A5E)\
+$time\
+[](fg:#1C3A5E bg:#3B76F0)\
+$directory\
+[](fg:#3B76F0 bg:#FCF392)\
+$git_branch\
+$git_status\
+$git_metrics\
+[](fg:#FCF392 bg:#030B16)\
+\n$character\
+"""
+
+# format = '$all'
+
+[directory]
+format = "[  $path ]($style)"
+style = "fg:#E4E4E4 bg:#3B76F0"
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+symbol = "  "
+style = "fg:#1C3A5E bg:#FCF392"
+
+[git_status]
+format = '[$all_status]($style)'
+style = "fg:#1C3A5E bg:#FCF392"
+
+[git_metrics]
+format = "([+$added]($added_style))[]($added_style)"
+added_style = "fg:#1C3A5E bg:#FCF392"
+deleted_style = "fg:bright-red bg:235"
+disabled = false
+
+[character]
+success_symbol = '[ ➜](bold green) '
+error_symbol = '[ ✗](#E84D44) '
+
+[time]
+disabled = false
+time_format = "%T" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)'
+
+# BRACKETED SEGMENTS PRESET
+[cmake]
+format = '\[[$symbol($version)]($style)\]'
+
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+style = "fg:bright-white bg:18"
+min_time = 5
+
+[docker_context]
+format = '\[[$symbol$context]($style)\]'
+
+[gcloud]
+format = '\[[$symbol$project]($style)\]'
+
+[golang]
+format = '\[[( $version)]($style)\]'
+
+[hg_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[java]
+format = '\[[$symbol($version)]($style)\]'
+
+[kubernetes]
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+# [kubernetes]
+# format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+disabled = false
+contexts = [
+  { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+]
+
+[memory_usage]
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+
+[package]
+format = '\[[$symbol$version]($style)\]'
+
+[php]
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+
+[swift]
+format = '\[[$symbol($version)]($style)\]'
+
+[terraform]
+# format = '\[[$symbol$workspace]($style)\]'
+format = '\[[$symbol$version $workspace]($style)\]'
