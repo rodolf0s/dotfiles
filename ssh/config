@@ -1,0 +1,26 @@
+# Default config
+#Host *
+#  AddKeysToAgent yes
+#  UseKeychain yes
+#  IdentityFile ~/.ssh/id_ed25519
+
+Host github.com-tw
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519
+
+Host github.com-sb
+	HostName github.com
+	AddKeysToAgent yes
+	UseKeychain yes
+	User git
+	IdentityFile ~/.ssh/id_ed25519_sb
+
+
+#Host github.com-sb
+#	HostName github.com
+#	UseKeychain yes
+#	AddKeysToAgent yes
+#        User git
+#        IdentityFile ~/.ssh/id_rsa_sb
+#	IdentitiesOnly yes
