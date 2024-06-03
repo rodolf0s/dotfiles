@@ -42,6 +42,8 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 # zsh plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit load marlonrichert/zsh-autocomplete
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
 zinit light greymd/docker-zsh-completion
@@ -61,6 +63,7 @@ compdef kubecolor=kubectl
 
 # STARSHIP
 eval "$(starship init zsh)"
+
 
 # FZF running: $(brew --prefix)/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
