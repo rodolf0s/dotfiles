@@ -38,6 +38,9 @@ export PATH="/Users/rodolfo.santander/go/bin:$PATH"
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
+plugins=(
+    brew
+)
 
 # zsh plugins
 zinit light zsh-users/zsh-autosuggestions
@@ -50,6 +53,7 @@ zinit light greymd/docker-zsh-completion
 zinit load mbhynes/fzf-gcloud
 zinit snippet OMZP::colored-man-pages
 zinit light junegunn/fzf-git.sh
+zi snippet OMZP::brew
 
 # BINDING KEYS
 bindkey '^[[H' beginning-of-line
